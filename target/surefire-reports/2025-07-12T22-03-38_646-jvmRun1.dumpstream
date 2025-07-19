@@ -1,0 +1,31 @@
+# Created at 2025-07-12T22:05:29.835
+TestSet has not finished before stream error has appeared >> initializing exit by non-null configuration: DEFAULT
+java.io.EOFException
+	at java.base/java.io.DataInputStream.readInt(DataInputStream.java:398)
+	at org.apache.maven.surefire.booter.MasterProcessCommand.decode(MasterProcessCommand.java:115)
+	at org.apache.maven.surefire.booter.CommandReader$CommandRunnable.run(CommandReader.java:391)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+
+
+# Created at 2025-07-12T22:05:33.708
+Unexpected IOException with stream: Jul 12, 2025 10:05:33 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 138
+
+
+# Created at 2025-07-12T22:05:33.717
+Unexpected IOException with stream: Jul 12, 2025 10:05:33 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 138.0.7204.101. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.20.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+
+
+# Created at 2025-07-12T22:05:38.855
+Unexpected IOException: 5,1,ecom.Tests.LoginTest,Login(ecom.Tests.LoginTest),ecom.Tests.LoginTest,null,null
+
+
+# Created at 2025-07-12T22:05:38.941
+Unexpected IOException: 6,1,ecom.Tests.LoginTest,Login(ecom.Tests.LoginTest),null,null,null
+
+
+# Created at 2025-07-12T22:05:39.506
+Unexpected IOException: 2,1,org.apache.maven.surefire.testng.TestNGDirectoryTestSuite,ecom.Tests.LoginTest,null,null,null
+
+

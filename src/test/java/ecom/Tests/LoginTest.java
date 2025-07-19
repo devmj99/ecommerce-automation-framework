@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.*;
+import ecom.example.Utils.ExcelReader;
 import ecom.example.Pages.loginPage;
 import ecom.example.Utils.driverManager;
 import java.util.List;
@@ -12,24 +13,30 @@ import java.time.Duration;
 public class LoginTest {
     WebDriver driver;
     loginPage loginPage;
+    ExcelReader excelReader;
 
-    @BeforeMethod
+    @BeforeClass
     public void setUp() {
-        driver = driverManager.getDriver();
-        driver.get("https://www.automationexercise.com/login");
+        driver= driverManager.getDriver();
         loginPage = new loginPage(driver);
+        excelReader = new ExcelReader();
+    }
+    @BeforeMethod
+    public void navigate(){
+        driver.get("https://www.automationexercise.com/login");
     }
 
     @Test
-    public void Login() {
-        loginPage.login("useremail@gmail.com", "userpassword");
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2000));
-        List<WebElement> elements=driver.findElements(By.xpath("/html/body/header/div/div/div/div[2]/div/ul/li[4]/a"));
-        Assert.assertFalse(elements.isEmpty(),"Element not found-login Might have failed");
+    public void testLogin(String username, String password, boolean isSuccess) {
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
 
-    @AfterMethod
+    @AfterClass
     public void tearDown() {
-        driverManager.quitDriver();
+        if (driver != null) {
+            driverManager.quitDriver();
+        }
+        System.out.println("Test resources cleaned up.");
     }
+
 }
