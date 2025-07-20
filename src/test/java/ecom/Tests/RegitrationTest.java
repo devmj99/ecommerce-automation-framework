@@ -15,6 +15,12 @@ public class RegitrationTest {
         driver = driverManager.getDriver();
     }
 
+    @AfterMethod
+    public void afterTest() {
+        // Add any per-test cleanup if needed
+        System.out.println("Test method completed.");
+    }
+
     @BeforeMethod
     public void navigate() {
         driver.get("https://www.automationexercise.com/register");
@@ -26,4 +32,14 @@ public class RegitrationTest {
         String actualTitle = driver.getTitle();
         Assert.assertEquals(actualTitle, expectedTitle, "Registration page title mismatch");
     }
+    @AfterClass
+    public void tearDown() {
+        if (driver != null) {
+            driverManager.quitDriver();
+        }
+        System.out.println("Test resources cleaned up.");
+    }
+
+
 }
+
