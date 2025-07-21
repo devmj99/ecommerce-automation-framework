@@ -34,4 +34,10 @@ public class loginPage {
         passwordField.sendKeys(password);
         loginButton.click();
     }
+    public void loginWithoutPassword(String username) {
+        usernameField.sendKeys(username);
+        // Do not enter password
+        loginButton.click();
+    }
+
 }
