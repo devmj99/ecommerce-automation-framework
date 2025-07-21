@@ -32,6 +32,13 @@ public class RegitrationTest {
         String actualTitle = driver.getTitle();
         Assert.assertEquals(actualTitle, expectedTitle, "Registration page title mismatch");
     }
+
+    @Test
+    public void testRegisterButtonDisplayed() {
+        // Replace with actual locator for the register button
+        WebElement registerBtn = driver.findElement(By.xpath(""));
+        Assert.assertTrue(registerBtn.isDisplayed(), "Register button is not displayed");
+    }
     @AfterClass
     public void tearDown() {
         if (driver != null) {
