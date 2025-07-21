@@ -28,4 +28,10 @@ public class loginPage {
         passwordField.sendKeys(password);
         loginButton.click();
     }
+
+    public void loginWithoutUsername(String password) {
+        // Do not enter username
+        passwordField.sendKeys(password);
+        loginButton.click();
+    }
 }
